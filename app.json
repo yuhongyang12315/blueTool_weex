@@ -1,0 +1,30 @@
+{
+  "pages": [
+    "pages/indexLive/indexLive",
+    "pages/index/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "蓝牙小程序调试工具",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/indexLive/indexLive",
+        "iconPath": "images/exam.png",
+        "selectedIconPath": "images/examselected.png",
+        "text": "云马live"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/homeselected.png",
+        "text": "目的地"
+      }
+    ]
+  },
+  "debug": false
+}

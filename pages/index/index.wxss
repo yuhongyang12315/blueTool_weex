@@ -1,0 +1,133 @@
+view {
+  display: inline-block;
+}
+
+.container {
+  padding: 0;
+  margin: 0;
+  align-items: flex-start;
+}
+.content {
+  margin: auto;
+  padding: auto;
+  position: absolute;
+  top: 5px;
+  left: 10px;
+}
+button {
+  background: red;
+}
+
+.list-item {
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  border: 1px dashed #000;
+}
+
+.list-item text {
+  margin-top: 10rpx;
+}
+
+.list-item button {
+  margin-right: 10rpx;
+}
+
+.deviceconnected {
+  background-color: sandybrown;
+}
+
+.recieve {
+  width: 100%;
+}
+
+.recieve textarea {
+  border: 1px dashed;
+  width: 100%;
+}
+
+/* 顶部view */
+.section_top {
+  margin-top: 100rpx;
+  display: inline-block;
+  width: calc(100vw - 60rpx);
+  margin-left: 30rpx;
+  position: relative;
+  border: 1px dashed;
+}
+.switch {
+  position: relative;
+  float: right;
+  right: 0px;
+}
+/* 设备cell */
+.section {
+  margin-top: 30rpx;
+  display: inline-block;
+  width: calc(100vw - 60rpx);
+  margin-left: 30rpx;
+  position: relative;
+}
+/* 连接后的操作view */
+
+.connectionView {
+  font-size: 30rpx;
+  width: 100vw;
+  /* background-color: bisque; */
+}
+
+.textareaView {
+  font-size: 26rpx;
+  width: calc(100vw - 60rpx);
+  /* height: auto; */
+  margin-left: 30rpx;
+  /* background-color: burlywood; */
+  border: 1px dashed;
+}
+
+.controlView {
+  /* margin-top: 30rpx; */
+  width: calc(100vw - 60rpx);
+  margin-left: 30rpx;
+  height: 900rpx;
+  border-bottom: 1px dashed; 
+   /* background-color: brown;  */
+}
+
+.inputView {
+  width: 100%;
+  height: 66rpx;
+  margin-bottom: 30rpx;
+  margin-top: 30rpx; 
+  border: 1px dashed;
+}
+
+.BtnView_left {
+  margin-top: 30rpx;
+  width: calc((100vw - 60rpx)*0.4);
+  height: 66rpx;
+  line-height: 66rpx;
+  text-align: center;
+  background-color: rgba(240, 91, 72, 1);
+  color: white;
+  float: left;
+  border-radius: 15rpx;
+}
+
+.BtnView_right {
+  margin-top: 30rpx;
+  width: calc((100vw - 60rpx)*0.4);
+  height: 66rpx;
+  line-height: 66rpx;
+  text-align: center;
+  background-color: rgba(240, 91, 72, 1);
+  color: white;
+  float: right;
+  border-radius: 15rpx;
+}
+
+.hover_BnView {
+  background-color: rgba(240, 91, 72, 0.5);
+}

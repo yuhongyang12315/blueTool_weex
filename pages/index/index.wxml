@@ -1,0 +1,80 @@
+<!--pages/mine/mine.wxml-->
+<view class="container">
+  <view class="section_top">
+    <view class="content">
+      <text>蓝牙初始化:</text>
+      <text>{{isbluetoothready?"ok":"尚未初始化"}}</text>
+    </view>
+    <view class="switch">
+      <switch checked="{{isbluetoothready}}" bindchange="switchBlueTooth" />
+    </view>
+  </view>
+
+  <view class="section" hidden="{{!isbluetoothready}}">
+    <button type="default" size="{{primarySize}}" loading="{{searchingstatus}}" plain="{{plain}}" disabled="{{disabled}}" bindtap="searchbluetooth"> {{searchingstatus?"搜索中":"搜索蓝牙"}} </button>
+  </view>
+  <block wx:for="{{devices}}" wx:key='item'>
+    <view class="section" hidden="{{!isbluetoothready}}">
+      <view class="list-item {{deviceconnected?'deviceconnected':''}}">
+        <text>设备名称:{{item.name}}</text>
+        <text>设备ID:{{item.deviceId}}</text>
+        <button id="{{item.deviceId}}" type="default" size="mini" bindtap="connectTO"> {{deviceconnected?"已连接":"连接"}} </button>
+      </view>
+    </view>
+  </block>
+
+  <!--   
+  <block wx:if="{{deviceconnected&&isbluetoothready}}">
+    <view class="recieve">
+      <text>数据接收</text>
+      <textarea disabled="true" value="{{receivedata}}" />
+    </view>
+    <view class="send">
+      <form bindsubmit="formSubmit" bindreset="formReset">
+        <text>发送数据:</text>
+        <input name="senddata"/>
+        <button size="mini" formType="submit">发送 </button>
+        <button size="mini" formType="reset">清空</button>
+      </form>
+    </view>
+  </block> -->
+  <!-- 连接成功后的操作View -->
+  <view class='connectionView'>
+    <view style='margin-left: 30rpx;'> 数据接收:</view>
+    <!-- 启动notify成功后，显示notify的返回值 -->
+    <textarea class='textareaView' value='{{receivedata}}' disabled='true'></textarea>
+    <!-- 操控区域 -->
+    <view class='controlView'>
+      <input class='inputView' placeholder='请输入名称~' bindinput='inputAction'></input>
+      <view class='BtnView_left' hover-class='hover_BnView' bindtap='openNotifyAction'>启用Notify</view>
+      
+      <view class='BtnView_right' hover-class='hover_BnView' data-readorwrite='readparameter' bindtap='closeNotifyAction'>停用Notify</view>
+
+      
+      
+      <view class='BtnView_left' hover-class='hover_BnView' data-readorwrite='readname' bindtap='readAction'>获取名字</view>
+      <view class='BtnView_right' hover-class='hover_BnView' data-readorwrite='writename' bindtap='writeEditAction'>修改名字</view>
+
+      <view class='BtnView_left' hover-class='hover_BnView' data-readorwrite='readparameter' bindtap='readAction'>获取连接参数</view>
+
+<view class='BtnView_right' hover-class='hover_BnView' data-readorwrite='writecommand' bindtap='writeEditAction'>命令测试</view>
+
+<view class='BtnView_left' hover-class='hover_BnView' data-readorwrite='readpower' bindtap='readAction'>获取配对密码</view>
+
+<!-- <view class='BtnView_right' hover-class='hover_BnView' data-readorwrite='writecommand' bindtap='writeEditAction'>配对密码</view> -->
+
+
+<view class='BtnView_right' hover-class='hover_BnView'  bindtap='clearAction'>清空显示</view>
+
+<view class='BtnView_left' hover-class='hover_BnView' data-readorwrite='readparameter' bindtap='AES_encryption'>加密</view>
+
+<view class='BtnView_right' hover-class='hover_BnView' data-readorwrite='writecommand' bindtap='AES_decryption'>解密</view>
+
+<view class='BtnView_left' hover-class='hover_BnView' data-readorwrite='readparameter' bindtap='getToken'>获取token</view>
+
+    </view>
+    <!-- 操控区域 -->
+
+  </view>
+
+</view>
